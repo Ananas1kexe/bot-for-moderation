@@ -230,7 +230,7 @@ async def mute_error(ctx, error):
 
 
 @bot.slash_command(description="Замьютить пользователя")
-@commands.has_permissions(moderate_members=True)
+@commands.has_permissions(administrator=True)
 async def ban(ctx, user: disnake.User, reason: str = None):
     if ctx.guild.me.top_role <= user.top_role:
         embed = disnake.Embed(
@@ -295,7 +295,7 @@ async def mute_error(ctx, error):
         
         
 @bot.slash_command(description="Размьютить пользователя")
-@commands.has_permissions(moderate_members=True)
+@commands.has_permissions(administrator=True)
 async def unban(ctx, user: disnake.User, reason: str = None):
     if ctx.guild.me.top_role <= user.top_role:
         embed = disnake.Embed(
